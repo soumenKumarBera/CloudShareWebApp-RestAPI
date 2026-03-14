@@ -98,5 +98,13 @@ public class ProfileServices {
         return profileReposertory.existsByClerkId(clerkId);
     }
 
+    public void deleteProfile(String clerId){
+       ProfileDocument existsProfile = profileReposertory.findByClerkId(clerId);
+       if (existsProfile != null){
+           profileReposertory.delete(existsProfile);
+       }
+
+    }
+
 
 }
